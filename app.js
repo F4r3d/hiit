@@ -29,7 +29,7 @@ const descansos = [
 
 const descanso = "gif/descanso.gif"
 
-let iMovimento = 0; //
+let iMovimento = 0;
 
 const alerta = document.getElementById('alerta');
 
@@ -89,7 +89,10 @@ botao.disabled = true;
         clearInterval(timer);
         console.log("Temporizador Geral Finalizado!");
         alerta.innerText = "Iniciar"
-        tabata.src = "galeria/tabataExercise_770x533_jpg.avif";
+        
+        document.getElementById("descanso").classList.add("none");
+        document.getElementById("tabata").classList.remove("none");
+
         displayT.innerText = formatarTempo(tTotalT);
         botao.disabled = false;
         return;
@@ -101,14 +104,20 @@ botao.disabled = true;
             modo = "ATIVO";
             sRestantes = tAtivo;
             alerta.innerText = titulo[0]
-            tabata.src = movimentos[0];
+
+            document.getElementById("tabata").classList.add("none");
+            document.getElementById("tabata" + iMovimento).classList.remove("none");
+
             document.getElementById("display").innerText = "00:20";
         }
         else if (modo === "ATIVO") {
             display.classList.remove("cor");
             modo = "DESCANSO";
             sRestantes = tDescanso;
-            tabata.src = descanso;
+
+            document.getElementById("tabata" + iMovimento).classList.add("none");
+            document.getElementById("descanso").classList.remove("none");
+
             iMovimento = (iMovimento + 1) % movimentos.length;
 
             const iDescansos = Math.floor(Math.random() * descansos.length);
@@ -119,7 +128,10 @@ botao.disabled = true;
             display.classList.remove("cor");
             modo = "ATIVO";
             sRestantes = tAtivo;
-            tabata.src = movimentos[iMovimento];
+            
+            document.getElementById("descanso").classList.add("none");
+            document.getElementById("tabata" + iMovimento).classList.remove("none");
+            
             alerta.innerText = titulo[iMovimento]
             display.innerText = formatarTempo(sRestantes);
             

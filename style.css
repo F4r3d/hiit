@@ -12,7 +12,7 @@ body {
 }
 
 .instrucao {
-    min-height: 150px; 
+    min-height: 120px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,7 +23,7 @@ body {
 .alerta {
     font-family: "Stack Sans Headline", sans-serif;
     letter-spacing: 3px;
-    font-size: 60px;
+    font-size: 45px;
     color: #EBF1F2;
     font-style: italic;
     display: block;
@@ -45,6 +45,10 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 8px;
+}
+
+.none {
+    display: none;
 }
 
 .controle {
