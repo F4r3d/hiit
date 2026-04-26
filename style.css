@@ -101,4 +101,8 @@ body {
     .movimento {
         width: 100% !important
     }
+
+  .alerta {
+    font-size: 36px;
+    }
 }
