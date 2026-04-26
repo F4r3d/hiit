@@ -40,7 +40,7 @@ const tabata = document.getElementById('tabata');
 
 const displayT = document.getElementById('displayT');
 
-let tTotal = 4 * 60;
+let tTotal = 12 * 60;
 let tTotalT = tTotal;
 let tAtivo = 20;
 let tDescanso = 40;
