@@ -59,8 +59,12 @@ parar.addEventListener('click', () => {
     sRestantes = 15;
     modo = "PREPARAR";
     display.innerText = "00:15";
+
+    alerta.innerText = "Iniciar"
     
-    tabata.src = "galeria/tabataExercise_770x533_jpg.avif";
+    document.querySelectorAll('.tabata').forEach(el => el.classList.add('none'));
+    document.getElementById("tabata").classList.remove("none");
+    iMovimento = 0
 
     botao.disabled = false;
     console.log("Treino interrompido e resetado.");
@@ -91,6 +95,7 @@ botao.disabled = true;
         alerta.innerText = "Iniciar"
         
         document.getElementById("descanso").classList.add("none");
+        document.getElementById("tabata" + iMovimento).classList.add("none");
         document.getElementById("tabata").classList.remove("none");
 
         displayT.innerText = formatarTempo(tTotalT);
@@ -146,6 +151,10 @@ botao.disabled = true;
             display.classList.add("cor");
             new Audio('audio/beep.mp3').play();
         }
+    }
+
+    if (sRestantes === 3 && modo === "ATIVO") {
+        new Audio('audio/pop.mp3').play();
     }
 
 }, 1000);
